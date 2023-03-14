@@ -8,6 +8,12 @@ pnpm build
 pnpm start
 ```
 
+## Docker
+
+```
+pnpm build:docker
+```
+
 ## Bootstrap log
 
 ```
@@ -19,4 +25,6 @@ pnpm install
 
 ## Documentation
 
+- https://www.npmjs.com/package/@nestjs/swagger
 - https://www.npmjs.com/package/api-spec-converter
+- https://www.npmjs.com/package/openapi-to-postmanv2
