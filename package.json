@@ -6,10 +6,10 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build && pnpm spec:convert && pnpm spec:generate-postman",
+    "build": "nest build && pnpm spec:convert && pnpm spec:generate-postman && pnpm copy:static",
     "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
+    "start": "node dist/main",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -21,16 +21,19 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "build:docker": "docker build . -t meetup-api-delivery-demo:latest",
     "spec:convert": "npx ts-node -r tsconfig-paths/register ./src/specs/write-swagger-spec.ts",
-    "spec:generate-postman": "npx ts-node ./src/specs/write-postman-spec.ts"
+    "spec:generate-postman": "npx ts-node ./src/specs/write-postman-spec.ts",
+    "copy:static": "cp -r ./src/static ./dist && cp ./dist/meetup-api-delivery-demo-v3.yaml ./dist/static/"
   },
   "dependencies": {
     "@nestjs/common": "^9.3.9",
     "@nestjs/core": "^9.3.9",
     "@nestjs/platform-express": "^9.3.9",
+    "@nestjs/serve-static": "^3.0.1",
     "@nestjs/swagger": "^6.2.1",
     "@nestjs/terminus": "^9.2.1",
     "api-spec-converter": "^2.12.0",
     "build-spec": "link:@/openapi/build-spec",
+    "jsonwebtoken": "^9.0.0",
     "openapi-to-postmanv2": "^4.10.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",

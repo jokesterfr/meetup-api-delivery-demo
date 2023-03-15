@@ -28,3 +28,4 @@ pnpm install
 - https://www.npmjs.com/package/@nestjs/swagger
 - https://www.npmjs.com/package/api-spec-converter
 - https://www.npmjs.com/package/openapi-to-postmanv2
+- https://github.com/stoplightio/elements
