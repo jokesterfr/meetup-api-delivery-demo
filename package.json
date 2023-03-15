@@ -10,6 +10,7 @@
     "clean": "rimraf dist",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "node dist/main",
+    "start:docker": "docker run -it --rm -p 3000:3000 meetup-api-delivery-demo:latest",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
